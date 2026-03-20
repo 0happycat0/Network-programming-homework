@@ -1,0 +1,6 @@
+{
+  "terminal.integrated.defaultProfile.windows": "Debian (WSL)",
+  "code-runner.executorMap": {
+    "c": "cd $dir && mkdir -p build && gcc $fileName -o build/$fileNameWithoutExt && ./build/$fileNameWithoutExt" 
+  },
+}
