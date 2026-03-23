@@ -7,24 +7,17 @@
 #include <unistd.h>
 
 // TCP client
-int main() {
-    char inp[50];
-    char cmd[16];
-    char server_ip[32];
-    int server_port;
+int main(int argc, char *argv[]) {
+    char *cmd = argv[1];
+    char *server_ip = argv[2];
+    int server_port = atoi(argv[3]);
 
-    printf("Nhap lenh: ");
-    fgets(inp, sizeof(inp), stdin);
-    int n = sscanf(inp, "%s %s %d", cmd, server_ip,
-                   &server_port); // so bien phan tich duoc
-
-    // printf("n=%d\n", n);
     // printf("cmd=%s\n", cmd);
     // printf("ip_inp=%s\n", server_ip);
     // printf("port=%d\n", server_port);
 
     // kiem tra lenh
-    if (strcmp(cmd, "tcp_client") != 0 || n != 3) {
+    if (strcmp(cmd, "tcp_client") != 0 || argc != 4) {
         printf("Nhap sai lenh\n");
         return 0;
     }
