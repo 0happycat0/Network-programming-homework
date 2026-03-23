@@ -48,6 +48,11 @@ int main(int argc, char *argv[]) {
         exit(EXIT_FAILURE);
     }
 
+    char buffer[1024];
+    int byte_received = recv(sock, buffer, sizeof(buffer), 0);
+    buffer[byte_received] = '\0';
+    printf("Nhan duoc tu server: %s\n", buffer);
+
     // gui du lieu tu ban phim
     printf("Nhap du lieu: ");
     fgets(message, sizeof(message), stdin);
